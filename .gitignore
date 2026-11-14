@@ -1,0 +1,5 @@
+.playwright-mcp/
+# pracovní soubory, nepatří na veřejný web
+.claude/
+CLAUDE.md
+recenze.txt

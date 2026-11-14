@@ -1,0 +1,761 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lužerady – výletní hospoda u Ohře od roku 1900</title>
+<meta name="description" content="Výletní hospoda u Ohře kousek za Louny. Zahrádka, půjčovna lodí, svatby a oslavy ve stodole.">
+<link rel="icon" href="favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#1F3320">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css">
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+<link href="https://api.fontshare.com/v2/css?f[]=alpino@400,500,700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1F3320; --ink-2:#172717; --cream:#FEFDF5; --sage:#E8EEDC; --sand:#F4F2EA; --white:#fff; --navbg:#F3F0E2; --star:#E7A41F;
+  --display:"Bricolage Grotesque",Impact,sans-serif; --text:"Alpino",system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:77px}
+body{background:var(--cream);color:var(--ink);font-family:var(--text);font-weight:500;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+h1,h2,h3,.disp,.btn,.link,.nav-menu a,.nav-cta,.mmenu a,.way p,.pcard p,.countdown p,.cd-nums b{font-family:var(--display);font-weight:800;font-stretch:75%;text-transform:uppercase;letter-spacing:.01em}
+.h2{font-size:80px;line-height:1.05}
+main{overflow-x:clip}
+.sub{font-size:24px;line-height:30px;font-weight:500;font-family:var(--text);text-transform:none}
+.center{text-align:center}
+
+/* data-sekce = jen popis sekce v kódu */
+[data-sekce]{position:relative}
+
+/* ---------- fotky / ilustrace ---------- */
+.foto{position:relative;background:#C9D3BE center/cover no-repeat;overflow:hidden}
+.ilu{display:flex;align-items:center;justify-content:center;container-type:size;color:var(--ink)}
+.ilu i{font-size:92cqmin;line-height:1}
+.ilu img{max-height:100%;width:auto;object-fit:contain}
+.frame{background:var(--white);padding:8px;box-shadow:0 2px 6px rgba(31,51,32,.08)}
+
+/* ---------- tlačítka ---------- */
+.btns{display:flex;gap:11px;justify-content:center;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;height:43px;padding:0 17px;border:3px solid currentColor;border-radius:11px;font-size:16px;text-decoration:none;letter-spacing:.02em;transition:transform .2s}
+.btn:hover{transform:rotate(-2deg) scale(1.04)}
+.link{font-size:16px;text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:2px}
+
+/* ========== 0 HLAVIČKA ========== */
+.nav{position:fixed;inset:0 0 auto 0;height:77px;z-index:50;background:var(--navbg);box-shadow:0 1px 0 rgba(31,51,32,.08),0 4px 14px rgba(31,51,32,.06);display:flex;align-items:center;justify-content:space-between;padding:0 40px}
+.logo img{height:56px;width:auto;mix-blend-mode:multiply}
+.nav-menu{position:absolute;left:50%;transform:translateX(-50%);display:flex;gap:28px}
+.nav-menu a{font-size:18px;white-space:nowrap;text-decoration:none;letter-spacing:.04em;padding:6px 0;background:linear-gradient(currentColor,currentColor) 0 100%/0 3px no-repeat;transition:background-size .25s}
+.nav-menu a:hover{background-size:100% 3px}
+.nav-cta{background:var(--ink);color:var(--cream);border-radius:11px;height:43px;padding:0 20px;display:flex;align-items:center;gap:8px;font-size:15px;text-decoration:none;transition:transform .2s}
+.nav-cta:hover,.nav-cta:focus-visible{transform:rotate(-2deg) scale(1.04)}
+.nav-cta:focus-visible{outline:3px solid var(--ink);outline-offset:1px}
+.burger{display:none;background:none;border:0;width:44px;height:44px;cursor:pointer;color:var(--ink)}
+.burger span{display:block;height:3px;background:currentColor;margin:6px 8px;border-radius:2px;transition:transform .25s,opacity .25s}
+.menu-open .burger span:nth-child(1){transform:translateY(9px) rotate(45deg)}
+.menu-open .burger span:nth-child(2){opacity:0;transform:scaleX(0)}
+.menu-open .burger span:nth-child(3){transform:translateY(-9px) rotate(-45deg)}
+
+/* ========== 1 HERO + ODPOČET ========== */
+.hero-wrap{background:var(--cream);padding-bottom:1px}
+.hero{height:100vh;min-height:600px;max-height:1000px;position:relative;display:grid;place-items:center;padding-top:75px;overflow:hidden}
+.hero .foto{position:absolute;inset:0;background-color:#4E5C44}
+.hero .foto::before{content:"";position:absolute;inset:0;background:rgba(23,39,23,.45)}
+.hero-in{position:relative;text-align:center;color:var(--cream);padding:0 24px}
+.hero-in .ilu{width:160px;height:120px;margin:0 auto 24px}
+.hero h1{font-size:80px;line-height:90px;color:var(--cream);max-width:1000px}
+.hero .sub{margin-top:18px;text-shadow:0 1px 3px rgba(0,0,0,.55),0 0 14px rgba(0,0,0,.35)}
+.hero h1{text-wrap:balance}.nw{white-space:nowrap}
+.wave{position:absolute;left:0;width:100%;height:50px;display:block}
+.hero .wave{bottom:-1px}
+.hero-wave{height:130px}
+.countdown{position:absolute;right:30px;bottom:70px;width:344px;height:151px;z-index:2;
+  background:var(--cream);border:2px solid var(--ink);box-shadow:8px 8px 0 var(--ink);transform:rotate(-1.5deg);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px}
+.countdown p{font-size:19px}
+.cd-nums{display:flex;gap:16px;text-align:center}
+.cd-nums b{display:block;font-size:40px;line-height:1}
+.cd-nums small{font-size:16px}
+
+/* ========== 2 JÍDLO & NÁPOJE ========== */
+.food{padding:90px 120px 100px}
+.stars{font-size:28px;letter-spacing:8px;text-align:center;margin-bottom:22px}
+.food .sub{max-width:920px;margin:8px auto 24px}
+.cards3{display:grid;grid-template-columns:repeat(3,331px);gap:24px;justify-content:center;margin-top:72px}
+.cards3>*:nth-child(1){transform:rotate(-3deg)}
+.cards3>*:nth-child(3){transform:rotate(3deg)}
+.fcard{position:relative;aspect-ratio:331/440;background:var(--sage);border:10px solid var(--white);box-shadow:0 2px 8px rgba(31,51,32,.08);
+  display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding-bottom:40px;text-decoration:none;transition:transform .3s}
+.fcard .ilu{width:260px;height:190px;margin-bottom:auto;margin-top:80px}
+.fcard h2{font-size:44px;line-height:48px;padding:0 16px}
+.cards3>.fcard:hover{transform:rotate(0) scale(1.02)}
+
+/* ========== 3 PRUH S LOGEM ========== */
+.band{background:var(--navbg);height:150px;width:110%;margin-left:-5%;transform:rotate(-2deg);overflow:hidden;display:flex;align-items:center;position:relative;z-index:1}
+.band-track{display:flex;width:max-content;align-items:center;gap:90px;padding-right:90px;white-space:nowrap;animation:marquee 40s linear infinite;background:var(--navbg)} /* pozadí kvůli multiply uvnitř animované vrstvy */
+.band-track img{height:84px;width:auto}
+@keyframes marquee{to{transform:translateX(-50%)}}
+
+/* ========== 4 CO U NÁS (cik-cak) ========== */
+.events{padding:110px 40px 40px}
+.events-head{margin-bottom:80px}
+.events-head .sub{margin-top:8px}
+.event{position:relative;max-width:1280px;margin:0 auto 160px}
+.event .media{width:80%;aspect-ratio:1024/640}
+.event .media .foto{width:100%;height:100%}
+.event.flip .media{margin-left:auto}
+.ecard{position:absolute;top:50%;right:0;width:470px;background:var(--sand);border:8px solid var(--white);padding:36px 40px 40px;transform:translateY(-50%) rotate(2deg);box-shadow:0 2px 8px rgba(31,51,32,.1)}
+.event.flip .ecard{right:auto;left:0;transform:translateY(-35%) rotate(-3deg)}
+.ecard h3{font-size:48px;line-height:52.8px;margin-bottom:8px}
+.ecard p{font-size:16px;line-height:22.4px;margin-bottom:10px}
+.ecard .btns{justify-content:flex-start;margin-top:8px}
+.ecard .ilu{position:absolute;right:-60px;bottom:-70px;width:130px;height:110px}
+.buoy svg{width:100%;height:100%}
+.kruh{transform-box:fill-box;transform-origin:center;animation:bob 3s ease-in-out infinite}
+.vlna{animation:flow 3s linear infinite}.v2{animation-duration:4.5s;animation-direction:reverse}
+@keyframes bob{0%,100%{transform:translateY(0) rotate(-5deg)}50%{transform:translateY(4px) rotate(5deg)}}
+@keyframes flow{to{transform:translateX(40px)}} /* = jedna celá vlna, smyčka bez skoku */
+/* koule visí na provázku ze spodního bílého okraje karty */
+.ecard .ilu.disco{left:40px;right:auto;bottom:auto;top:calc(100% + 8px + 44px);width:110px;height:110px;transform-origin:50% -44px;animation:sway 5s ease-in-out infinite}
+.disco::before{content:"";position:absolute;bottom:88%;left:50%;width:3px;height:56px;margin-left:-1.5px;background:var(--ink)}
+.disco svg{width:100%;height:100%;overflow:visible}
+.zrcatka{animation:spin 2.4s linear infinite}
+.jiskra{transform-box:fill-box;transform-origin:center;animation:twinkle 2.4s ease-in-out infinite}.j2{animation-delay:1.2s}
+@keyframes sway{0%,100%{transform:rotate(-5deg)}50%{transform:rotate(5deg)}}
+@keyframes spin{to{transform:translateX(-48px)}}
+@keyframes twinkle{0%,100%{transform:scale(.3);opacity:.2}50%{transform:scale(1);opacity:1}}
+
+/* ========== 5 RECENZE ========== */
+.reviews{background:var(--sage);padding:110px 40px 150px;position:relative}
+.wv{position:absolute;left:0;top:-69px;width:100%;height:70px;display:block;pointer-events:none}
+.reviews .sub{margin:8px auto 50px;max-width:700px}
+.rating{display:flex;justify-content:center;gap:22px;max-width:720px;margin:0 auto 60px}
+.rating a{flex:1;display:flex;flex-direction:column;align-items:center;gap:8px;padding:26px 16px;text-decoration:none;background:var(--white);box-shadow:0 2px 8px rgba(31,51,32,.08);transition:transform .2s}
+.rating a:hover{transform:rotate(-2deg) scale(1.04)}.rating a+a:hover{transform:rotate(2deg) scale(1.04)}
+.r-brand{font:700 34px/1 var(--text);letter-spacing:-.01em}
+.r-google span:nth-child(1),.r-google span:nth-child(4){color:#4285F4}.r-google span:nth-child(2),.r-google span:nth-child(6){color:#EA4335}
+.r-google span:nth-child(3){color:#FBBC05}.r-google span:nth-child(5){color:#34A853}
+.r-firmy{color:#C00;font-style:italic}
+.r-score{display:flex;align-items:center;gap:10px;font-size:17px}
+.r-score b{font-weight:700}
+.r-stars{color:var(--star);letter-spacing:2px}
+.r-cta{font-size:14px;text-decoration:underline;text-underline-offset:3px;opacity:.75}
+.qmarquee{margin:0 -40px;overflow:hidden;padding:12px 0;cursor:grab;touch-action:pan-y;user-select:none}
+.qmarquee.drag{cursor:grabbing}
+.qtrack{display:flex;gap:22px;padding-right:22px;width:max-content;text-align:left;will-change:transform}
+.review{flex:0 0 340px;display:flex;flex-direction:column;gap:14px;background:var(--white);border-radius:16px;padding:24px;box-shadow:0 2px 10px rgba(31,51,32,.07);transition:transform .2s,box-shadow .2s}
+.review:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(31,51,32,.12)}
+.review-top{display:flex;align-items:center;justify-content:space-between}
+.stars{display:inline-flex;gap:2px;color:var(--star)}.st{width:16px;height:16px;fill:currentColor}.st.off{fill:#D9DCCF}
+.g-ico{width:20px;height:20px}
+.firmy-mark{font:italic 700 13px/1 var(--text);color:#C00}.firmy-mark span{font-style:normal}
+.review p{font-size:16px;line-height:24px;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:5;overflow:hidden}
+.review p{min-height:120px}
+.r-more{align-self:flex-start;margin-top:-6px;background:none;border:0;padding:0;font:700 14px var(--text);color:var(--ink);text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+.review footer{display:flex;align-items:center;gap:10px;font-size:14px;margin-top:auto;min-height:48px}
+.r-who{flex:1;min-width:0;display:grid}.r-who b{font-weight:700}.r-who small{font-size:12px;opacity:.65}
+.avatar{flex:none;width:36px;height:36px;border-radius:50%;object-fit:cover;background:var(--sage)}
+.r-photos{display:flex;gap:6px}
+.r-photo{position:relative;flex:none;border-radius:8px;overflow:hidden;border:2px solid var(--white);box-shadow:0 1px 4px rgba(0,0,0,.15);transition:transform .2s}
+.r-photo:hover{transform:scale(1.08)}
+.r-photo span{position:absolute;inset:0;display:grid;place-items:center;background:rgba(23,39,23,.6);color:#fff;font-weight:700;font-size:14px}
+.r-photo img{width:44px;height:44px;object-fit:cover}
+
+/* ========== 6 GALERIE ========== */
+.gallery{position:relative;padding:110px 40px 130px}
+.gallery .sub{margin:8px auto 50px}
+.gal{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-flow:dense;gap:18px;max-width:1280px;margin:0 auto 44px}
+.gal .frame{padding:6px;aspect-ratio:4/3;overflow:hidden;cursor:zoom-in}
+.gal img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.gal .frame:hover img{transform:scale(1.05)}
+.gal .frame:nth-child(1){grid-column:span 2;grid-row:span 2;aspect-ratio:auto}.gal .frame:nth-child(6){grid-column:3/span 2;grid-row:span 2;aspect-ratio:auto}
+.lb{border:0;padding:0;background:none;max-width:100vw;max-height:100vh;width:100vw;height:100vh;color:var(--cream)}
+.lb::backdrop{background:rgba(23,39,23,.9)}
+.lb[open]{display:grid;place-items:center}
+.lb figure{max-width:min(92vw,1300px);text-align:center}
+.lb-text{max-width:620px;margin:0 auto;background:var(--white);color:var(--ink);border-radius:16px;padding:32px;font-size:19px;line-height:29px;text-align:left}
+.lb img{max-width:100%;max-height:82vh;margin:0 auto;border:6px solid var(--white)}
+.lb figcaption{margin-top:12px;font-size:15px}
+.lb-btn{position:fixed;width:52px;height:52px;border-radius:50%;border:2px solid rgba(255,255,255,.6);background:rgba(23,39,23,.5);color:#fff;font-size:24px;display:grid;place-items:center;cursor:pointer}
+.lb [hidden]{display:none!important}
+.lb-btn:hover{background:rgba(255,255,255,.2)}
+.lb-close{top:16px;right:16px}.lb-prev{left:16px;top:50%;margin-top:-26px}.lb-next{right:16px;top:50%;margin-top:-26px}
+
+/* ========== 7 ZAVOLEJTE ========== */
+.reserve{position:relative;color:var(--cream);padding:80px 40px 70px;margin:0 0 40px;z-index:0}
+.reserve::after{content:"";position:absolute;inset:0;background:var(--ink);transform:skewY(1deg);z-index:-1}
+.bell{font-size:76px;line-height:1;margin-bottom:14px;transform-origin:50% 8%;animation:ring 5s ease-in-out infinite}
+@keyframes ring{0%,70%,100%{transform:rotate(0)}74%{transform:rotate(16deg)}80%{transform:rotate(-13deg)}86%{transform:rotate(8deg)}92%{transform:rotate(-4deg)}}
+.bigtel{display:inline-block;margin:18px 0 8px;font:800 clamp(48px,8vw,104px)/1 var(--display);font-stretch:75%;letter-spacing:.01em;text-decoration:none;color:var(--navbg);transition:transform .2s}
+.bigtel:hover{transform:scale(1.03)}
+.status{font-size:18px;margin-bottom:26px}
+.dot{display:inline-block;vertical-align:1px;margin-right:10px;width:12px;height:12px;border-radius:50%;background:#C9A227}
+.status.open .dot{background:#7BC86C;box-shadow:0 0 0 0 rgba(123,200,108,.6);animation:pulse 2s infinite}
+@keyframes pulse{to{box-shadow:0 0 0 12px rgba(123,200,108,0)}}
+
+/* ========== 8 HISTORIE ========== */
+.hist{padding:90px 60px 140px;overflow:hidden}
+
+.hist .sub{max-width:760px;margin:8px auto 60px}
+.cards4{display:grid;grid-template-columns:repeat(4,minmax(0,290px));gap:22px;justify-content:center;margin-bottom:40px}
+.cards4>*:nth-child(odd){transform:rotate(-2deg)}.cards4>*:nth-child(even){transform:rotate(2deg) translateY(14px)}
+.pcard{position:relative;aspect-ratio:3/4;border:8px solid var(--white);box-shadow:0 2px 8px rgba(31,51,32,.1);text-align:left}
+.pcard .foto{position:absolute;inset:0}
+.pcard .foto::before{content:"";position:absolute;inset:0;background:linear-gradient(transparent 35%,rgba(23,39,23,.85))}
+.pcard div.txt{position:absolute;left:0;right:0;bottom:0;padding:0 22px 24px;color:var(--cream)}
+.pcard p{font-size:54px;line-height:1}
+.pcard span{display:block;font-size:15px;line-height:21px;margin-top:6px}
+
+/* ========== 9 KONTAKT ========== */
+.contact{position:relative;background:var(--sage);padding:110px 40px 140px}
+.contact .sub{margin:8px auto 60px;max-width:700px}
+.c-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:60px;max-width:1180px;margin:0 auto 70px;align-items:start}
+.c-info dt{display:flex;align-items:center;gap:8px;font-weight:700;font-size:15px;margin-top:22px}
+.c-info dt:first-child{margin-top:0}.c-info dt i{font-size:20px}
+.c-info dd{margin:6px 0 0 28px;font-size:18px;line-height:26px}
+.c-info dd a{text-decoration:none;border-bottom:2px solid currentColor}
+.c-info small{display:block;font-size:14px;opacity:.75;margin-top:6px}
+.c-info .btns{justify-content:flex-start;margin:30px 0 0 28px}
+.hours{max-width:380px;margin-top:4px;background:var(--white);border-radius:10px;padding:14px 18px}
+.h-season{font:800 22px/1 var(--display);font-stretch:75%;text-transform:uppercase;letter-spacing:.02em;margin-bottom:6px}
+.h-row{display:flex;justify-content:space-between;gap:16px;padding:8px 0;border-bottom:1px solid #E4E8DA;font-size:17px}
+.h-row b{font-weight:700;white-space:nowrap}
+.h-off{border-bottom:0;margin-top:8px;padding-top:14px;border-top:2px solid #E4E8DA;align-items:baseline}.h-off span{font:800 22px/1 var(--display);font-stretch:75%;text-transform:uppercase;letter-spacing:.02em}.h-off b{color:#B3261E;text-transform:uppercase;letter-spacing:.04em}
+.rez{display:flex;gap:12px;align-items:flex-start;max-width:380px;margin-top:14px;background:var(--ink);color:var(--cream);border-radius:10px;padding:14px 18px;font-size:15px;line-height:22px}
+.rez i{font-size:24px;margin-top:-1px}.rez b{display:block;font-size:17px}
+.c-form{background:var(--cream);padding:34px;display:grid;gap:18px;position:sticky;top:100px} /* jede s obrazovkou vedle údajů */
+.c-form .row{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.c-form label{display:grid;gap:6px;font-size:14px;font-weight:700}
+.c-form input,.c-form select,.c-form textarea{font:500 16px var(--text);color:var(--ink);background:var(--white);border:2px solid #CFD6C4;border-radius:8px;padding:11px 12px;width:100%}
+.c-form textarea{resize:vertical;min-height:120px}
+.c-form :focus{outline:3px solid var(--ink);outline-offset:1px}
+.c-form .btn{justify-self:start;background:var(--ink);color:var(--cream);border-color:var(--ink);cursor:pointer}
+.f-ok{font-weight:700}
+.c-map{display:grid;grid-template-columns:1.6fr 1fr;gap:50px;max-width:1180px;margin:0 auto;align-items:center}
+.c-map iframe{display:block;width:100%;height:420px;border:0}
+.c-way h3{font-size:40px;line-height:1;margin-bottom:14px}
+.c-way p{font-size:16px;line-height:23px;margin-bottom:10px}
+.c-way .btns{justify-content:flex-start;margin-top:18px}
+
+/* ========== 10 PATIČKA ========== */
+.foot{background:var(--ink);color:var(--white);padding:56px 40px 130px;position:relative;display:grid;grid-template-columns:minmax(0,1.6fr) repeat(3,minmax(0,1fr));gap:30px;font-size:15px;font-weight:400}
+.foot .logo img{height:90px;filter:invert(1);mix-blend-mode:screen}
+.foot .credit{margin-top:40px;opacity:.7}
+.foot h4{font-size:20px;font-weight:700;margin-bottom:22px}
+.foot ul{list-style:none;display:grid;gap:14px}
+.foot a{text-decoration:none}.foot a:hover{text-decoration:underline}
+.foot dl dt{font-weight:700;margin-top:14px}.foot dl dt:first-child{margin-top:0}
+.foot dl dd{margin-top:6px;font-size:14px}
+.social{display:flex;flex-direction:column;align-items:flex-start;gap:12px}
+.social a{display:inline-flex;align-items:center;gap:8px;height:44px;min-width:160px;padding:0 14px;border:2px solid rgba(255,255,255,.35);border-radius:11px}
+.social a:hover{border-color:#fff;text-decoration:none}
+.bi{width:20px;height:20px;fill:currentColor;flex:none}
+
+/* ---------- mobilní menu ---------- */
+.mmenu{display:none}
+
+/* ================= TABLET ================= */
+@media (max-width:1199px){
+  .food{padding-left:40px;padding-right:40px}
+  .cards3{grid-template-columns:repeat(3,minmax(0,331px))}
+  .cards4{grid-template-columns:repeat(2,minmax(0,290px))}
+  .nav-menu{gap:18px}.nav-menu a{font-size:16px}
+  .c-grid,.c-map{grid-template-columns:1fr;gap:40px}
+  .c-form{position:static}
+}
+@media (max-width:1023px){.nav-menu{display:none}.burger{display:block}
+  .mmenu{display:flex;position:fixed;inset:77px 0 0 0;background:var(--navbg);z-index:49;flex-direction:column;align-items:center;gap:22px;padding-top:40px;overflow-y:auto;
+    opacity:0;visibility:hidden;transform:translateY(-12px);transition:opacity .25s,transform .25s,visibility 0s .25s}
+  .mmenu a{font-size:28px;text-decoration:none}
+  .mmenu>*{opacity:0;transform:translateY(-8px);transition:opacity .25s,transform .25s}
+  body.menu-open{overflow:hidden}
+  body.menu-open .mmenu{opacity:1;visibility:visible;transform:none;transition:opacity .25s,transform .25s}
+  body.menu-open .mmenu>*{opacity:1;transform:none;transition-delay:calc(var(--i)*40ms)}
+  .nav-cta{margin-left:auto;margin-right:12px}
+}
+/* ================= MOBIL ================= */
+@media (max-width:809px){
+  html{scroll-padding-top:84px}
+  .h2{font-size:40px;line-height:40px}
+  .sub{font-size:18px;line-height:21.6px}
+  .nav{height:84px;padding:0 24px}
+  .nav-cta{display:none}
+  .logo img{height:48px}
+  .mmenu{inset:84px 0 0 0}
+
+  .hero{height:560px;min-height:0}
+  .hero h1{font-size:min(44px,8.4vw);line-height:1.1} /* oba řádky se vejdou i na 320 px */
+  .hero .sub{font-size:1.25rem;line-height:1.4}
+  .countdown{position:relative;right:auto;bottom:auto;margin:40px auto 0;width:calc(100% - 46px);max-width:344px}
+
+  .food{padding:40px 24px 80px}
+  .hero-wrap{padding-bottom:40px}
+  .cards3{grid-template-columns:minmax(0,240px);gap:20px;margin-top:40px}
+  .fcard h2{font-size:28px;line-height:32px}
+  .fcard .ilu{width:70%;height:40%;margin-top:40px}
+  .fcard{padding-bottom:24px}
+
+  .events{padding:60px 24px 20px}
+  .events-head{margin-bottom:50px}
+  .event{margin-bottom:100px;display:flex;flex-direction:column}
+  .event .media{width:100%}
+  .ecard,.event.flip .ecard{position:relative;top:auto;left:auto;right:auto;width:auto;margin:-56px 14px 0;transform:rotate(2deg);padding:28px 30px;z-index:1}
+  .event.flip .ecard{transform:rotate(-2deg)}
+  .ecard h3{font-size:28px;line-height:35px}
+  .ecard .ilu{width:80px;height:66px;right:0;bottom:-50px}
+  .ecard .ilu.disco{width:76px;height:76px;left:30px;top:calc(100% + 8px + 40px);transform-origin:50% -40px}
+  .event#akce{margin-bottom:150px}
+
+  .band{height:110px}.band-track img{height:66px}
+  .reviews{padding:60px 24px 80px}
+  .qmarquee{margin:0 -24px}
+  .review{flex-basis:280px}
+  .lb-prev,.lb-next{top:auto;bottom:20px;margin:0}
+  .rating{flex-direction:column;gap:14px}
+  .hero-wave{height:80px}
+
+  .gallery{padding:60px 24px 80px}
+  .wv{height:40px;top:-39px}
+  .gal{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+  .gal .frame:nth-child(6){grid-column:auto;grid-row:auto}
+  .gal .frame:nth-child(6){aspect-ratio:4/3}
+  .gal .frame:nth-child(10){display:none}
+  .status{max-width:320px;margin-inline:auto}
+
+  .reserve{padding:60px 18px 70px}
+  .bell{font-size:60px}
+  .status{font-size:16px}
+
+  .hist{padding:40px 24px 80px}
+  .cards4{grid-template-columns:minmax(0,300px);gap:18px}
+  .cards4>*:nth-child(n){transform:none}
+  .pcard{aspect-ratio:4/3}
+  .pcard p{font-size:40px}
+
+  .contact{padding:60px 24px 80px}
+  .c-form{padding:22px}
+  .c-form .row{grid-template-columns:1fr}
+  .c-info dd{font-size:16px}
+  .c-map iframe{height:300px}
+  .c-way h3{font-size:30px}
+
+  .foot{grid-template-columns:1fr;text-align:center;justify-items:center;padding:60px 24px 100px}
+  .foot .credit{margin-top:0}
+  .social{align-items:center}
+}
+@media (prefers-reduced-motion:reduce){.burger span,.mmenu,.mmenu>*,.nav-cta{transition:none!important}.band-track,.bell,.dot,.disco,.zrcatka,.jiskra,.kruh,.vlna{animation:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="i-fb" viewBox="0 0 24 24"><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/></symbol>
+<symbol id="i-google" viewBox="0 0 24 24"><path d="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z"/></symbol>
+<symbol id="i-firmy" viewBox="0 0 24 24"><path d="M7.6 3.5h13.2l-1 3.6h-9.1l-.7 2.9h7.3l-.9 3.5H9.1L7.4 20.5H3.3z"/></symbol>
+</defs></svg>
+
+<!-- ========== 0 HLAVIČKA ========== -->
+<header class="nav" data-sekce="Hlavička / navigace">
+  <a class="logo" href="#" aria-label="Lužerady, nahoru"><img src="img/logo.png" alt="Lužerady" width="1316" height="585"></a>
+  <nav class="nav-menu" aria-label="Hlavní">
+    <a href="#jidlo">Jídlo a pití</a>
+    <a href="#lode">Půjčovna lodí</a>
+    <a href="#akce">Svatby a akce</a>
+    <a href="#recenze">Recenze</a>
+    <a href="#galerie">Galerie</a>
+    <a href="#historie">Historie</a>
+    <a href="#kontakt">Kontakt</a>
+  </nav>
+  <a class="nav-cta" href="#kontakt"><i class="ph-fill ph-calendar-check" aria-hidden="true"></i>Rezervovat</a>
+  <button class="burger" aria-label="Otevřít menu" aria-expanded="false" aria-controls="mmenu"><span></span><span></span><span></span></button>
+</header>
+<nav class="mmenu" id="mmenu" aria-label="Mobilní">
+  <a href="#jidlo">Jídlo a pití</a><a href="#lode">Půjčovna lodí</a><a href="#akce">Svatby a akce</a>
+  <a href="#recenze">Recenze</a><a href="#galerie">Galerie</a><a href="#historie">Historie</a><a href="#kontakt">Kontakt</a>
+  <a class="btn" href="#kontakt"><i class="ph-fill ph-calendar-check" aria-hidden="true"></i>Rezervovat</a>
+  <a class="btn" href="tel:+420724977269"><i class="ph-fill ph-phone" aria-hidden="true"></i>Zavolat</a>
+</nav>
+
+<main>
+
+<!-- ========== 1 HERO + ODPOČET ========== -->
+<div class="hero-wrap" data-sekce="Hero + odpočet do sezóny">
+  <section class="hero">
+    <div class="foto" style="background-image:url(img/foto/hero-zahradka.jpg)"></div>
+    <div class="hero-in">
+      <h1>Výletní hospoda u Ohře<br><span class="nw">od roku 1900</span></h1>
+      <p class="sub">Zahrádka mezi chmelnicemi, lodě na řeku a místo na svatbu.</p>
+    </div>
+    <svg class="wave hero-wave" viewBox="0 0 1440 130" preserveAspectRatio="none" aria-hidden="true"><path d="M0 40 C180 6 360 6 560 36 S940 84 1140 44 S1360 8 1440 24 V130 H0Z" fill="#B7C99F"/><path d="M0 70 C220 34 420 40 640 68 S1040 104 1260 66 S1400 46 1440 52 V130 H0Z" fill="#E8EEDC"/><path d="M0 100 C260 76 500 82 760 98 S1220 112 1440 90 V130 H0Z" fill="#FEFDF5"/></svg>
+  </section>
+  <!-- cíl odpočtu: změň data-cil na skutečné datum otevření -->
+  <div class="countdown" data-cil="2027-04-01T00:00:00">
+    <p>Otevíráme v dubnu</p>
+    <div class="cd-nums">
+      <div><b data-d>00</b><small>Dní</small></div>
+      <div><b data-h>00</b><small>Hodin</small></div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== 2 JÍDLO & NÁPOJE ========== -->
+<section class="food center" id="jidlo" data-sekce="Jídlo &amp; nápoje">
+  <div class="stars" aria-hidden="true">✦✦✦</div>
+  <h2 class="h2">Jídlo &amp; nápoje</h2>
+  <p class="sub">Pivo z výčepu, domácí limonády a jídlo z grilu. Od dubna do září, ve stínu stromů uprostřed luk.</p>
+  <!-- DOPLNIT: odkazy povedou na podstránku jidlo-a-piti.html, obsah menu dodá majitel -->
+  <div class="cards3">
+    <a class="fcard" href="#"><span class="ilu"><i class="ph-fill ph-fork-knife"></i></span><h2>Stálé menu</h2></a>
+    <a class="fcard" href="#"><span class="ilu"><i class="ph-fill ph-bowl-steam"></i></span><h2>Denní menu</h2></a>
+    <a class="fcard" href="#"><span class="ilu"><i class="ph-fill ph-beer-stein"></i></span><h2>Nápoje</h2></a>
+  </div>
+</section>
+
+<!-- ========== 3 PRUH S LOGEM ========== -->
+<div class="band" data-sekce="Pruh s logem (oddělovač)" aria-hidden="true">
+  <div class="band-track">
+    <img src="img/logo-pruh.png" alt=""><img src="img/logo-pruh.png" alt=""><img src="img/logo-pruh.png" alt=""><img src="img/logo-pruh.png" alt="">
+    <img src="img/logo-pruh.png" alt=""><img src="img/logo-pruh.png" alt=""><img src="img/logo-pruh.png" alt=""><img src="img/logo-pruh.png" alt="">
+  </div>
+</div>
+
+<!-- ========== 4 CO U NÁS (cik-cak) ========== -->
+<section class="events" data-sekce="Co u nás (2 bloky)">
+  <div class="events-head center">
+    <h2 class="h2">Co u nás najdete</h2>
+    <p class="sub">Areál ukrytý ve vzrostlých stromech uprostřed luk</p>
+  </div>
+
+  <article class="event" id="lode" data-sekce="Půjčovna lodí">
+    <div class="media frame"><div class="foto" style="background-image:url(img/foto/ohre-reka.jpg)"></div></div>
+    <div class="ecard">
+      <h3>Na vodu přímo od nás</h3>
+      <p>Půjčíme vám nafukovací člun a ukážeme, kudy na to. Ceník, návod k použití i smlouvu si můžete stáhnout předem.</p>
+      <div class="btns"><a class="btn" href="#">Ceník a trasy</a></div>
+      <div class="ilu buoy" aria-hidden="true"><svg viewBox="0 0 100 100"><g class="kruh">
+<path d="M40 56 L66 22 L68 56 Z" fill="currentColor"/><path d="M36 56 L60 34 L60 56 Z" fill="currentColor" opacity=".55"/><rect x="65.5" y="18" width="3" height="40" rx="1.5" fill="currentColor"/>
+<path d="M12 60 H88 L78 74 Q50 79 22 74 Z" fill="currentColor"/></g>
+<path class="vlna v1" d="M-40 80 q10 -7 20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+<path class="vlna v2" d="M-40 92 q10 -6 20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" opacity=".5"/></svg></div>
+    </div>
+  </article>
+
+  <article class="event flip" id="akce" data-sekce="Svatby a oslavy">
+    <div class="media frame"><div class="foto" style="background-image:url(img/foto/svatba-brana.jpg)"></div></div>
+    <div class="ecard">
+      <h3>Svatba pod stromy u Ohře</h3>
+      <p>Obřad venku na trávě, hostina v historických prostorách a parket, kde se tancuje do rána. Postaráme se o vás od první schůzky po úklid. A když se zkazí počasí, něco vymyslíme.</p>
+      <div class="btns"><a class="btn" href="#kontakt">Poptat termín</a></div>
+      <div class="ilu disco" aria-hidden="true"><svg viewBox="0 0 100 100"><defs><clipPath id="koule"><circle cx="50" cy="54" r="34"/></clipPath>
+<pattern id="zrcatka" width="24" height="16" patternUnits="userSpaceOnUse" fill="#FEFDF5"><rect x="1" y="1" width="10" height="6" rx="1"/><rect x="13" y="9" width="10" height="6" rx="1"/></pattern></defs>
+<rect x="45" y="12" width="10" height="8" rx="2" fill="currentColor"/><circle cx="50" cy="54" r="38" fill="currentColor"/>
+<g clip-path="url(#koule)"><rect class="zrcatka" x="0" y="20" width="148" height="70" fill="url(#zrcatka)"/></g>
+<path class="jiskra j1" d="M88 14l2.5 7 7 2.5-7 2.5-2.5 7-2.5-7-7-2.5 7-2.5z" fill="currentColor"/><path class="jiskra j2" d="M12 74l2 5 5 2-5 2-2 5-2-5-5-2 5-2z" fill="currentColor"/></svg></div>
+    </div>
+  </article>
+</section>
+
+<!-- ========== 5 RECENZE ========== -->
+<section class="reviews center" id="recenze" data-sekce="Recenze">
+  <svg class="wv " viewBox="0 0 1440 70" preserveAspectRatio="none" aria-hidden="true"><path d="M0 26 C240 4 480 6 720 28 S1200 56 1440 22 V70 H0Z" fill="#CDDBB9"/><path d="M0 46 C240 26 480 30 720 46 S1200 64 1440 38 V70 H0Z" fill="#E8EEDC"/></svg>
+  <div class="stars" aria-hidden="true">✦✦✦</div>
+  <h2 class="h2">Co o nás píšete</h2>
+  <p class="sub">Byli jste u nás? Napište pár řádků. Pomůžete dalším najít cestu k Ohři.</p>
+  <!-- čísla stav 11/2026; Google se po nasazení na Cloudflare načítá živě přes /api/recenze (functions/api/recenze.js), Firmy.cz API nemají -->
+  <div class="rating">
+    <!-- DOPLNIT: přímý odkaz „napsat recenzi“ z Firemního profilu Google -->
+    <a href="https://www.google.com/maps/place/Ob%C4%8Derstven%C3%AD+Lu%C5%BEerady/@50.3699153,13.8127803,17.75z/data=!4m15!1m8!3m7!1s0x470a2fc275e9b161:0x6ac76d05dc76af53!2sLu%C5%BEerady+428,+440+01+Louny+1!3b1!8m2!3d50.3699822!4d13.8128671!16s%2Fg%2F11c4prckvf!3m5!1s0x470a2f91ff40ef37:0x5272280b6b5b7982!8m2!3d50.3700057!4d13.812897!16s%2Fg%2F11g2pzpgz3" target="_blank" rel="noopener">
+      <span class="r-brand r-google" aria-label="Google"><span>G</span><span>o</span><span>o</span><span>g</span><span>l</span><span>e</span></span>
+      <span class="r-score"><b data-g-rating>4,8</b><span class="r-stars" aria-hidden="true">★★★★★</span><span><span data-g-count>139</span> recenzí</span></span>
+      <span class="r-cta">Ohodnotit na Google</span>
+    </a>
+    <a href="https://www.firmy.cz/detail/13212941-obcerstveni-luzerady-louny.html" target="_blank" rel="noopener">
+      <span class="r-brand r-firmy">Firmy.cz</span>
+      <span class="r-score"><b>4,7</b><span class="r-stars" aria-hidden="true">★★★★★</span><span>13 hodnocení</span></span>
+      <span class="r-cta">Ohodnotit na Firmy.cz</span>
+    </a>
+  </div>
+  <!-- Recenze doslova z Google (zdroj recenze.txt, 40 s textem), profilovky a fotky v img/recenze/. Kolek: vynechány 2 snímky z videí. DOPLNIT: souhlas autorů s použitím profilovek a fotek. -->
+  <div class="qmarquee" aria-label="Recenze hostů, pruh lze posouvat tažením">
+    <div class="qtrack">
+      <article class="review"><div class="review-top"><span class="stars" aria-label="5 z 5 hvězd"><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg></span><svg class="g-ico" viewBox="0 0 48 48" aria-label="Google"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></div><p>„Byl jsem zde jako svatební DJ. Krásné a čisté místo, usměvavá obsluha. K areálu není co vytknout. Dokonalé. Jen příjezdová cesta je horší.“</p><button class="r-more" type="button" hidden>Celá recenze</button><footer><img class="avatar" src="img/recenze/kolek-profil.jpg" alt="" loading="lazy"><span class="r-who"><b>Štěpán Kolek</b><small>před rokem, Google</small></span><span class="r-photos"><a class="r-photo" href="img/recenze/kolek-foto-1.jpg" data-lb="r-kolek" data-cap="Fotka od hosta · Štěpán Kolek"><img src="img/recenze/kolek-foto-1-t.jpg" alt="Fotka od hosta" loading="lazy"></a><a class="r-photo" href="img/recenze/kolek-foto-4.jpg" data-lb="r-kolek" data-cap="Fotka od hosta · Štěpán Kolek"><img src="img/recenze/kolek-foto-4-t.jpg" alt="Fotka od hosta" loading="lazy"></a></span></footer></article>
+      <article class="review"><div class="review-top"><span class="stars" aria-label="5 z 5 hvězd"><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg></span><svg class="g-ico" viewBox="0 0 48 48" aria-label="Google"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></div><p>„Měli jsme zde svatbu a mohu jen doporučit. Od A po Z perfektní. Moc děkujeme za ten individuální přístup, za podporu od první myšlenky, nacházení řešení, přes operativní změny zejména kvůli počasí, až po finální úklid na my si mohli jen přijet pro věci. Ještě jednou moc děkujeme všem! Bylo to super“</p><button class="r-more" type="button" hidden>Celá recenze</button><footer><img class="avatar" src="img/recenze/zeman-profil.jpg" alt="" loading="lazy"><span class="r-who"><b>Vladimír Zeman</b><small>před 4 měsíci, Google</small></span></footer></article>
+      <article class="review"><div class="review-top"><span class="stars" aria-label="5 z 5 hvězd"><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg></span><svg class="g-ico" viewBox="0 0 48 48" aria-label="Google"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></div><p>„Hezké posezení s mojí rodinou. Měli jsme výbornou rybu na grilu, pochutnali jsme si. Určitě se příště zase vrátíme. Atmosféra a obsluha na jedničku 😄🙂“</p><button class="r-more" type="button" hidden>Celá recenze</button><footer><img class="avatar" src="img/recenze/hrindova-profil.jpg" alt="" loading="lazy"><span class="r-who"><b>Sona Hrindova</b><small>před měsícem, Google</small></span></footer></article>
+      <article class="review"><div class="review-top"><span class="stars" aria-label="5 z 5 hvězd"><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg></span><svg class="g-ico" viewBox="0 0 48 48" aria-label="Google"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></div><p>„Klidné místečko, kam rádi jezdíme na zakončení okruhu kolem Loun na kole. Mají tu dobré pivečko, klobásky, grilovaný sýr a příjemnou atmosféru mezi chmelnicemi. Chtělo by to víc míst k sezení, museli jsme chvíli čekat, než se uvolní lavice, ale i na stojáka se dá dobře pokecat 👍😁“</p><button class="r-more" type="button" hidden>Celá recenze</button><footer><img class="avatar" src="img/recenze/rabas-profil.jpg" alt="" loading="lazy"><span class="r-who"><b>Marek Rabas</b><small>před 3 lety, Google</small></span><span class="r-photos"><a class="r-photo" href="img/recenze/rabas-foto-1.jpg" data-lb="r-rabas" data-cap="Fotka od hosta · Marek Rabas"><img src="img/recenze/rabas-foto-1-t.jpg" alt="Fotka od hosta" loading="lazy"></a></span></footer></article>
+      <article class="review"><div class="review-top"><span class="stars" aria-label="5 z 5 hvězd"><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg></span><svg class="g-ico" viewBox="0 0 48 48" aria-label="Google"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></div><p>„Krásné místo pan majitel ochotný příjemná obsluha rád se vrátím“</p><button class="r-more" type="button" hidden>Celá recenze</button><footer><img class="avatar" src="img/recenze/tu-profil.jpg" alt="" loading="lazy"><span class="r-who"><b>Jeremi Tu</b><small>před 3 měsíci, Google</small></span></footer></article>
+      <article class="review"><div class="review-top"><span class="stars" aria-label="5 z 5 hvězd"><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg></span><svg class="g-ico" viewBox="0 0 48 48" aria-label="Google"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></div><p>„Kus poctivě práce. Pamatuju si v jakém stavu to tu bylo a v jakém je to tu teď. Jako bonus skvělé pivo. Smekám klobouček 👍🏻“</p><button class="r-more" type="button" hidden>Celá recenze</button><footer><img class="avatar" src="img/recenze/kratky-profil.jpg" alt="" loading="lazy"><span class="r-who"><b>Vladimír Krátký</b><small>před 4 lety, Google</small></span><span class="r-photos"><a class="r-photo" href="img/recenze/kratky-foto-1.jpg" data-lb="r-kratky" data-cap="Fotka od hosta · Vladimír Krátký"><img src="img/recenze/kratky-foto-1-t.jpg" alt="Fotka od hosta" loading="lazy"></a><a class="r-photo" href="img/recenze/kratky-foto-2.jpg" data-lb="r-kratky" data-cap="Fotka od hosta · Vladimír Krátký"><img src="img/recenze/kratky-foto-2-t.jpg" alt="Fotka od hosta" loading="lazy"><span>+1</span></a><a class="r-photo" href="img/recenze/kratky-foto-3.jpg" data-lb="r-kratky" data-cap="Fotka od hosta · Vladimír Krátký" hidden><img src="img/recenze/kratky-foto-3-t.jpg" alt="Fotka od hosta" loading="lazy"></a></span></footer></article>
+      <article class="review"><div class="review-top"><span class="stars" aria-label="5 z 5 hvězd"><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg></span><svg class="g-ico" viewBox="0 0 48 48" aria-label="Google"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></div><p>„Příjemné prostředí. Vhodné na svatbu.“</p><button class="r-more" type="button" hidden>Celá recenze</button><footer><img class="avatar" src="img/recenze/novotny-profil.jpg" alt="" loading="lazy"><span class="r-who"><b>slavek novotny</b><small>před 3 lety, Google</small></span><span class="r-photos"><a class="r-photo" href="img/recenze/novotny-foto-1.jpg" data-lb="r-novotny" data-cap="Fotka od hosta · slavek novotny"><img src="img/recenze/novotny-foto-1-t.jpg" alt="Fotka od hosta" loading="lazy"></a><a class="r-photo" href="img/recenze/novotny-foto-2.jpg" data-lb="r-novotny" data-cap="Fotka od hosta · slavek novotny"><img src="img/recenze/novotny-foto-2-t.jpg" alt="Fotka od hosta" loading="lazy"></a></span></footer></article>
+      <article class="review"><div class="review-top"><span class="stars" aria-label="5 z 5 hvězd"><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg></span><svg class="g-ico" viewBox="0 0 48 48" aria-label="Google"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></div><p>„Včera měl zde můj syn a snacha svatbu.Musím vyzdvihnout to ,že všechen personál včetně majitele a jeho otce jsou opravdu zlatíčka a s úsměvem na tváři celý den až do ranních hodin, kdy jsme končili byli velmi moc příjemní. Všichni jsou moc úžasní a dělali i to co vůbec nebylo určitě v jejich náplní práce ..❤️🥰. Moc, moc opravdu děkujeme 🥰🥰🥰 Prostředí jako v pohádce.👏👏👏 Jediné co je škoda ,že město není schopno opravit příjezdovou cestu k tak krásnému a reprezentativními místu🤔“</p><button class="r-more" type="button" hidden>Celá recenze</button><footer><img class="avatar" src="img/recenze/hostakova-profil.jpg" alt="" loading="lazy"><span class="r-who"><b>Soňa Hostáková</b><small>Upraveno před 4 lety, Google</small></span></footer></article>
+      <article class="review"><div class="review-top"><span class="stars" aria-label="5 z 5 hvězd"><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg></span><svg class="g-ico" viewBox="0 0 48 48" aria-label="Google"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></div><p>„Svatební místo pro kouzelnou svatbu. Perfektní místo.“</p><button class="r-more" type="button" hidden>Celá recenze</button><footer><img class="avatar" src="img/recenze/owl-profil.jpg" alt="" loading="lazy"><span class="r-who"><b>Owl</b><small>před 3 lety, Google</small></span><span class="r-photos"><a class="r-photo" href="img/recenze/owl-foto-1.jpg" data-lb="r-owl" data-cap="Fotka od hosta · Owl"><img src="img/recenze/owl-foto-1-t.jpg" alt="Fotka od hosta" loading="lazy"></a><a class="r-photo" href="img/recenze/owl-foto-2.jpg" data-lb="r-owl" data-cap="Fotka od hosta · Owl"><img src="img/recenze/owl-foto-2-t.jpg" alt="Fotka od hosta" loading="lazy"><span>+2</span></a><a class="r-photo" href="img/recenze/owl-foto-3.jpg" data-lb="r-owl" data-cap="Fotka od hosta · Owl" hidden><img src="img/recenze/owl-foto-3-t.jpg" alt="Fotka od hosta" loading="lazy"></a><a class="r-photo" href="img/recenze/owl-foto-4.jpg" data-lb="r-owl" data-cap="Fotka od hosta · Owl" hidden><img src="img/recenze/owl-foto-4-t.jpg" alt="Fotka od hosta" loading="lazy"></a></span></footer></article>
+      <article class="review"><div class="review-top"><span class="stars" aria-label="5 z 5 hvězd"><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg></span><svg class="g-ico" viewBox="0 0 48 48" aria-label="Google"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></div><p>„Velmi pěkné místo pro pořádání oslav, pohoda, klid, hodně prostoru. Jediné co se dá vytknout jsou příjezdové cesty,to je opravdu tankodrom,ale s tím majitel mnoho neudělá.“</p><button class="r-more" type="button" hidden>Celá recenze</button><footer><img class="avatar" src="img/recenze/safrova-profil.jpg" alt="" loading="lazy"><span class="r-who"><b>Eva Šafrová</b><small>před 3 lety, Google</small></span></footer></article>
+      <article class="review"><div class="review-top"><span class="stars" aria-label="4 z 5 hvězd"><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st off" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg></span><svg class="g-ico" viewBox="0 0 48 48" aria-label="Google"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></div><p>„Moc hezké místo pro svatby, občerstvení pro cyklisty, výborná obsluha, skvělé jídlo. Jediný co musím vytknout je příjezdová cesta ze všech stran“</p><button class="r-more" type="button" hidden>Celá recenze</button><footer><img class="avatar" src="img/recenze/frankova-profil.jpg" alt="" loading="lazy"><span class="r-who"><b>Marie Fraňková</b><small>před 4 lety, Google</small></span></footer></article>
+      <article class="review"><div class="review-top"><span class="stars" aria-label="5 z 5 hvězd"><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg></span><svg class="g-ico" viewBox="0 0 48 48" aria-label="Google"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></div><p>„Krásný poslední adventní čas. Příjemné prostředí, zábava pro děti, občerstvení pro děti i dospělé. Bezvadná vánoční atmosféra.“</p><button class="r-more" type="button" hidden>Celá recenze</button><footer><img class="avatar" src="img/recenze/strnadova-profil.jpg" alt="" loading="lazy"><span class="r-who"><b>Ivana Strnadova</b><small>před 3 lety, Google</small></span></footer></article>
+      <article class="review"><div class="review-top"><span class="stars" aria-label="5 z 5 hvězd"><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg></span><svg class="g-ico" viewBox="0 0 48 48" aria-label="Google"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></div><p>„Nádherné místo. Úžasná obsluhující. Pivečko, káva, klobása,hranolky, grilovaný sýr super mňamka 😋. Doporučuji navštívit určitě nebudete zklamáni ale budete nadšený s občerstvením a s obsluhou 👍.“</p><button class="r-more" type="button" hidden>Celá recenze</button><footer><img class="avatar" src="img/recenze/eslerova-profil.jpg" alt="" loading="lazy"><span class="r-who"><b>Jana Eslerova</b><small>před 5 lety, Google</small></span></footer></article>
+      <article class="review"><div class="review-top"><span class="stars" aria-label="4 z 5 hvězd"><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st off" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg></span><svg class="g-ico" viewBox="0 0 48 48" aria-label="Google"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></div><p>„Pěkně posezení klidné místo“</p><button class="r-more" type="button" hidden>Celá recenze</button><footer><img class="avatar" src="img/recenze/riedel-profil.jpg" alt="" loading="lazy"><span class="r-who"><b>Pavel Riedel</b><small>před 5 lety, Google</small></span><span class="r-photos"><a class="r-photo" href="img/recenze/riedel-foto-1.jpg" data-lb="r-riedel" data-cap="Fotka od hosta · Pavel Riedel"><img src="img/recenze/riedel-foto-1-t.jpg" alt="Fotka od hosta" loading="lazy"></a><a class="r-photo" href="img/recenze/riedel-foto-2.jpg" data-lb="r-riedel" data-cap="Fotka od hosta · Pavel Riedel"><img src="img/recenze/riedel-foto-2-t.jpg" alt="Fotka od hosta" loading="lazy"></a></span></footer></article>
+      <article class="review"><div class="review-top"><span class="stars" aria-label="5 z 5 hvězd"><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg></span><svg class="g-ico" viewBox="0 0 48 48" aria-label="Google"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></div><p>„Skvělá zastávka na občerstvení při toulkách přírodou. Vynikající švestková limča 😊“</p><button class="r-more" type="button" hidden>Celá recenze</button><footer><img class="avatar" src="img/recenze/chloubova-profil.jpg" alt="" loading="lazy"><span class="r-who"><b>Lucie Chloubová</b><small>před 6 lety, Google</small></span></footer></article>
+      <article class="review"><div class="review-top"><span class="stars" aria-label="4 z 5 hvězd"><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st off" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg></span><svg class="g-ico" viewBox="0 0 48 48" aria-label="Google"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></div><p>„Pro svatby a akce super místo. Případně i k výletům kolem řeky“</p><button class="r-more" type="button" hidden>Celá recenze</button><footer><img class="avatar" src="img/recenze/balas-profil.jpg" alt="" loading="lazy"><span class="r-who"><b>Jakub Baláš</b><small>před 6 lety, Google</small></span></footer></article>
+      <article class="review"><div class="review-top"><span class="stars" aria-label="5 z 5 hvězd"><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg></span><svg class="g-ico" viewBox="0 0 48 48" aria-label="Google"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></div><p>„Krásný kout za městem, moc příjemné prostředí.“</p><button class="r-more" type="button" hidden>Celá recenze</button><footer><img class="avatar" src="img/recenze/hermansky-profil.jpg" alt="" loading="lazy"><span class="r-who"><b>David Heřmanský (Ritchie)</b><small>před 5 lety, Google</small></span></footer></article>
+      <article class="review"><div class="review-top"><span class="stars" aria-label="5 z 5 hvězd"><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg></span><svg class="g-ico" viewBox="0 0 48 48" aria-label="Google"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></div><p>„Snaží se, příjemné místo a prima lidi.“</p><button class="r-more" type="button" hidden>Celá recenze</button><footer><img class="avatar" src="img/recenze/langer-profil.jpg" alt="" loading="lazy"><span class="r-who"><b>Martin Langer</b><small>před 2 lety, Google</small></span></footer></article>
+      <article class="review"><div class="review-top"><span class="stars" aria-label="4 z 5 hvězd"><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st off" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg></span><svg class="g-ico" viewBox="0 0 48 48" aria-label="Google"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></div><p>„Časté místo pro cyklisty nebo turisty, příjemný personál a dobré pivo.“</p><button class="r-more" type="button" hidden>Celá recenze</button><footer><img class="avatar" src="img/recenze/termer-profil.jpg" alt="" loading="lazy"><span class="r-who"><b>Radek Termer</b><small>před 7 lety, Google</small></span></footer></article>
+      <article class="review"><div class="review-top"><span class="stars" aria-label="5 z 5 hvězd"><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg></span><svg class="g-ico" viewBox="0 0 48 48" aria-label="Google"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></div><p>„Skvělý hamburgery a výborná švestková limonáda 🥰 příjemný posezení a super obsluha ☝️😊“</p><button class="r-more" type="button" hidden>Celá recenze</button><footer><img class="avatar" src="img/recenze/libalova-profil.jpg" alt="" loading="lazy"><span class="r-who"><b>Zuzana Libalova</b><small>před 6 lety, Google</small></span></footer></article>
+      <article class="review"><div class="review-top"><span class="stars" aria-label="5 z 5 hvězd"><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg></span><svg class="g-ico" viewBox="0 0 48 48" aria-label="Google"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></div><p>„Příjemné posezení dobré pivo a vždy je co zakousnout .“</p><button class="r-more" type="button" hidden>Celá recenze</button><footer><img class="avatar" src="img/recenze/roubal-profil.jpg" alt="" loading="lazy"><span class="r-who"><b>Stanislav Roubal</b><small>před 5 lety, Google</small></span></footer></article>
+      <article class="review"><div class="review-top"><span class="stars" aria-label="5 z 5 hvězd"><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg></span><svg class="g-ico" viewBox="0 0 48 48" aria-label="Google"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></div><p>„Krásné místo v přírodě, ideální na malý výlet z města...“</p><button class="r-more" type="button" hidden>Celá recenze</button><footer><img class="avatar" src="img/recenze/razim-profil.jpg" alt="" loading="lazy"><span class="r-who"><b>Martin Razim</b><small>před 4 lety, Google</small></span></footer></article>
+      <article class="review"><div class="review-top"><span class="stars" aria-label="5 z 5 hvězd"><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg></span><svg class="g-ico" viewBox="0 0 48 48" aria-label="Google"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></div><p>„Rakovnický Bakalář - výborná volba. Oblíbená zastávka při procházkách.“</p><button class="r-more" type="button" hidden>Celá recenze</button><footer><img class="avatar" src="img/recenze/hubka-profil.jpg" alt="" loading="lazy"><span class="r-who"><b>Petr Hubka</b><small>před 7 lety, Google</small></span></footer></article>
+      <article class="review"><div class="review-top"><span class="stars" aria-label="5 z 5 hvězd"><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg></span><svg class="g-ico" viewBox="0 0 48 48" aria-label="Google"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></div><p>„Krásné místečko na odpočinek a osvěžení alko i nealko“</p><button class="r-more" type="button" hidden>Celá recenze</button><footer><img class="avatar" src="img/recenze/vopata-profil.jpg" alt="" loading="lazy"><span class="r-who"><b>Vladimir Vopata</b><small>Upraveno před 7 lety, Google</small></span></footer></article>
+      <article class="review"><div class="review-top"><span class="stars" aria-label="5 z 5 hvězd"><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg></span><svg class="g-ico" viewBox="0 0 48 48" aria-label="Google"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></div><p>„Navštivte toto místo. Jednoznačně. Místo s budoucností 👍“</p><button class="r-more" type="button" hidden>Celá recenze</button><footer><img class="avatar" src="img/recenze/byna-profil.jpg" alt="" loading="lazy"><span class="r-who"><b>Lubos Byna</b><small>Upraveno před 4 lety, Google</small></span></footer></article>
+      <article class="review"><div class="review-top"><span class="stars" aria-label="5 z 5 hvězd"><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg></span><svg class="g-ico" viewBox="0 0 48 48" aria-label="Google"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></div><p>„Krásné posezení uprostřed přírody. Klid a pohoda“</p><button class="r-more" type="button" hidden>Celá recenze</button><footer><img class="avatar" src="img/recenze/stribula-profil.jpg" alt="" loading="lazy"><span class="r-who"><b>Ladislav Stribula</b><small>před 4 lety, Google</small></span></footer></article>
+      <article class="review"><div class="review-top"><span class="stars" aria-label="5 z 5 hvězd"><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg></span><svg class="g-ico" viewBox="0 0 48 48" aria-label="Google"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></div><p>„Jako vždy spokojenost nabídka, prostředí, obsluha“</p><button class="r-more" type="button" hidden>Celá recenze</button><footer><img class="avatar" src="img/recenze/musil-profil.jpg" alt="" loading="lazy"><span class="r-who"><b>vladislav musil</b><small>před 4 lety, Google</small></span></footer></article>
+      <article class="review"><div class="review-top"><span class="stars" aria-label="5 z 5 hvězd"><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg></span><svg class="g-ico" viewBox="0 0 48 48" aria-label="Google"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></div><p>„Pivo párek na čerstvém vzduchu.“</p><button class="r-more" type="button" hidden>Celá recenze</button><footer><img class="avatar" src="img/recenze/seydl-profil.jpg" alt="" loading="lazy"><span class="r-who"><b>Martin Seydl</b><small>před 2 lety, Google</small></span></footer></article>
+      <article class="review"><div class="review-top"><span class="stars" aria-label="5 z 5 hvězd"><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg></span><svg class="g-ico" viewBox="0 0 48 48" aria-label="Google"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></div><p>„Výborná švestková limča! Děkujeme“</p><button class="r-more" type="button" hidden>Celá recenze</button><footer><img class="avatar" src="img/recenze/kopecka-profil.jpg" alt="" loading="lazy"><span class="r-who"><b>Kamila Kopecká</b><small>před 5 lety, Google</small></span></footer></article>
+      <article class="review"><div class="review-top"><span class="stars" aria-label="5 z 5 hvězd"><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg></span><svg class="g-ico" viewBox="0 0 48 48" aria-label="Google"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></div><p>„Krásné místo na různé oslavy,svatbu atd.“</p><button class="r-more" type="button" hidden>Celá recenze</button><footer><img class="avatar" src="img/recenze/novakova-profil.jpg" alt="" loading="lazy"><span class="r-who"><b>Lenka Novakova</b><small>před 6 lety, Google</small></span></footer></article>
+      <article class="review"><div class="review-top"><span class="stars" aria-label="5 z 5 hvězd"><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg></span><svg class="g-ico" viewBox="0 0 48 48" aria-label="Google"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></div><p>„Pohoda odpočinek zastávka na kole“</p><button class="r-more" type="button" hidden>Celá recenze</button><footer><img class="avatar" src="img/recenze/hanzl-profil.jpg" alt="" loading="lazy"><span class="r-who"><b>Roman Hanzl</b><small>před 4 lety, Google</small></span></footer></article>
+      <article class="review"><div class="review-top"><span class="stars" aria-label="5 z 5 hvězd"><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg></span><svg class="g-ico" viewBox="0 0 48 48" aria-label="Google"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></div><p>„VZPOMÍNKA NA DĚTSKÁ LÉTA“</p><button class="r-more" type="button" hidden>Celá recenze</button><footer><img class="avatar" src="img/recenze/marushladikova-profil.jpg" alt="" loading="lazy"><span class="r-who"><b>marushladikova</b><small>před 7 lety, Google</small></span><span class="r-photos"><a class="r-photo" href="img/recenze/marushladikova-foto-1.jpg" data-lb="r-marushladikova" data-cap="Fotka od hosta · marushladikova"><img src="img/recenze/marushladikova-foto-1-t.jpg" alt="Fotka od hosta" loading="lazy"></a><a class="r-photo" href="img/recenze/marushladikova-foto-2.jpg" data-lb="r-marushladikova" data-cap="Fotka od hosta · marushladikova"><img src="img/recenze/marushladikova-foto-2-t.jpg" alt="Fotka od hosta" loading="lazy"><span>+1</span></a><a class="r-photo" href="img/recenze/marushladikova-foto-3.jpg" data-lb="r-marushladikova" data-cap="Fotka od hosta · marushladikova" hidden><img src="img/recenze/marushladikova-foto-3-t.jpg" alt="Fotka od hosta" loading="lazy"></a></span></footer></article>
+      <article class="review"><div class="review-top"><span class="stars" aria-label="5 z 5 hvězd"><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg></span><svg class="g-ico" viewBox="0 0 48 48" aria-label="Google"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></div><p>„Výborná obsluha!!! Moc dobré pivko👍👍🍻“</p><button class="r-more" type="button" hidden>Celá recenze</button><footer><img class="avatar" src="img/recenze/srpova-profil.jpg" alt="" loading="lazy"><span class="r-who"><b>Karla Srpová</b><small>před 5 lety, Google</small></span></footer></article>
+      <article class="review"><div class="review-top"><span class="stars" aria-label="5 z 5 hvězd"><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg></span><svg class="g-ico" viewBox="0 0 48 48" aria-label="Google"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></div><p>„Milá obsluha, hezké prostředí.“</p><button class="r-more" type="button" hidden>Celá recenze</button><footer><img class="avatar" src="img/recenze/scholerova-profil.jpg" alt="" loading="lazy"><span class="r-who"><b>Hanka Scholerova</b><small>před 5 lety, Google</small></span></footer></article>
+      <article class="review"><div class="review-top"><span class="stars" aria-label="5 z 5 hvězd"><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg></span><svg class="g-ico" viewBox="0 0 48 48" aria-label="Google"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></div><p>„Děkujeme za skvělý teambulding“</p><button class="r-more" type="button" hidden>Celá recenze</button><footer><img class="avatar" src="img/recenze/studena-profil.jpg" alt="" loading="lazy"><span class="r-who"><b>Jana Studena</b><small>Upraveno před 5 lety, Google</small></span></footer></article>
+      <article class="review"><div class="review-top"><span class="stars" aria-label="5 z 5 hvězd"><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg></span><svg class="g-ico" viewBox="0 0 48 48" aria-label="Google"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></div><p>„Hezké prostředí, dobrá obsluha“</p><button class="r-more" type="button" hidden>Celá recenze</button><footer><img class="avatar" src="img/recenze/gruntova-profil.jpg" alt="" loading="lazy"><span class="r-who"><b>Jana Gruntova</b><small>před 4 lety, Google</small></span></footer></article>
+      <article class="review"><div class="review-top"><span class="stars" aria-label="5 z 5 hvězd"><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg></span><svg class="g-ico" viewBox="0 0 48 48" aria-label="Google"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></div><p>„Krásné“</p><button class="r-more" type="button" hidden>Celá recenze</button><footer><img class="avatar" src="img/recenze/sucha-profil.jpg" alt="" loading="lazy"><span class="r-who"><b>Kveta Suchá</b><small>před 6 lety, Google</small></span><span class="r-photos"><a class="r-photo" href="img/recenze/sucha-foto-1.jpg" data-lb="r-sucha" data-cap="Fotka od hosta · Kveta Suchá"><img src="img/recenze/sucha-foto-1-t.jpg" alt="Fotka od hosta" loading="lazy"></a></span></footer></article>
+      <article class="review"><div class="review-top"><span class="stars" aria-label="5 z 5 hvězd"><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg></span><svg class="g-ico" viewBox="0 0 48 48" aria-label="Google"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></div><p>„Super zastávka pro cyklisty 👌“</p><button class="r-more" type="button" hidden>Celá recenze</button><footer><img class="avatar" src="img/recenze/liska-profil.jpg" alt="" loading="lazy"><span class="r-who"><b>Jaroslav Liška</b><small>před 6 lety, Google</small></span></footer></article>
+      <article class="review"><div class="review-top"><span class="stars" aria-label="5 z 5 hvězd"><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg></span><svg class="g-ico" viewBox="0 0 48 48" aria-label="Google"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></div><p>„Perfektní obsluha, skvele místo;-)“</p><button class="r-more" type="button" hidden>Celá recenze</button><footer><img class="avatar" src="img/recenze/riedl-profil.jpg" alt="" loading="lazy"><span class="r-who"><b>Lukáš Riedl</b><small>před 6 lety, Google</small></span><span class="r-photos"><a class="r-photo" href="img/recenze/riedl-foto-1.jpg" data-lb="r-riedl" data-cap="Fotka od hosta · Lukáš Riedl"><img src="img/recenze/riedl-foto-1-t.jpg" alt="Fotka od hosta" loading="lazy"></a></span></footer></article>
+      <article class="review"><div class="review-top"><span class="stars" aria-label="5 z 5 hvězd"><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg class="st" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg></span><svg class="g-ico" viewBox="0 0 48 48" aria-label="Google"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></div><p>„Super zastavka s obcerstvenim.“</p><button class="r-more" type="button" hidden>Celá recenze</button><footer><img class="avatar" src="img/recenze/fix-profil.jpg" alt="" loading="lazy"><span class="r-who"><b>Martin Fix</b><small>před 5 lety, Google</small></span></footer></article>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 6 GALERIE ========== -->
+<section class="gallery center" id="galerie" data-sekce="Galerie">
+  <svg class="wv " viewBox="0 0 1440 70" preserveAspectRatio="none" aria-hidden="true"><path d="M0 26 C240 4 480 6 720 28 S1200 56 1440 22 V70 H0Z" fill="#F1F0E1"/><path d="M0 46 C240 26 480 30 720 46 S1200 64 1440 38 V70 H0Z" fill="#FEFDF5"/></svg>
+  <h2 class="h2">Galerie</h2>
+  <p class="sub">Zahrádka, řeka, svatby a akce</p>
+  <div class="gal">
+    <a class="frame" href="img/foto/zahradka-lide.jpg" data-lb="galerie" data-cap="Zahrádka plná hostů pod stromy"><img src="img/foto/zahradka-lide-t.jpg" alt="Zahrádka plná hostů pod stromy" loading="lazy"></a>
+    <a class="frame" href="img/foto/ohre-lode.jpg" data-lb="galerie" data-cap="Lodě na Ohři"><img src="img/foto/ohre-lode-t.jpg" alt="Lodě na Ohři" loading="lazy"></a>
+    <a class="frame" href="img/foto/svatba-brana.jpg" data-lb="galerie" data-cap="Svatební brána u stodoly"><img src="img/foto/svatba-brana-t.jpg" alt="Svatební brána u stodoly" loading="lazy"></a>
+    <a class="frame" href="img/foto/svatba-tabule.jpg" data-lb="galerie" data-cap="Prostřená svatební tabule"><img src="img/foto/svatba-tabule-t.jpg" alt="Prostřená svatební tabule" loading="lazy"></a>
+    <a class="frame" href="img/foto/veranda-kvetiny.jpg" data-lb="galerie" data-cap="Veranda hospody"><img src="img/foto/veranda-kvetiny-t.jpg" alt="Veranda hospody" loading="lazy"></a>
+    <a class="frame" href="img/foto/koncert-veranda.jpg" data-lb="galerie" data-cap="Koncert na verandě"><img src="img/foto/koncert-veranda-t.jpg" alt="Koncert na verandě" loading="lazy"></a>
+    <a class="frame" href="img/foto/lode-start.jpg" data-lb="galerie" data-cap="Start výletu na lodích"><img src="img/foto/lode-start-t.jpg" alt="Start výletu na lodích" loading="lazy"></a>
+    <a class="frame" href="img/foto/svatba-prskavky.jpg" data-lb="galerie" data-cap="Svatební večer s prskavkami"><img src="img/foto/svatba-prskavky-t.jpg" alt="Svatební večer s prskavkami" loading="lazy"></a>
+    <a class="frame" href="img/foto/svatba-obrad.jpg" data-lb="galerie" data-cap="Svatební obřad na zahradě"><img src="img/foto/svatba-obrad-t.jpg" alt="Svatební obřad na zahradě" loading="lazy"></a>
+    <a class="frame" href="img/foto/zahrada-destniky.jpg" data-lb="galerie" data-cap="Zahrada se slunečníky"><img src="img/foto/zahrada-destniky-t.jpg" alt="Zahrada se slunečníky" loading="lazy"></a>
+  </div>
+  <div class="btns">
+    <!-- DOPLNIT: odkaz na podstránku galerie -->
+    <a class="btn" href="#"><i class="ph-fill ph-images" aria-hidden="true"></i>Celá galerie</a>
+    <a class="btn" href="https://www.facebook.com/Luzerady/" target="_blank" rel="noopener"><svg class="bi" aria-hidden="true"><use href="#i-fb"/></svg>Facebook</a>
+  </div>
+</section>
+
+<!-- ========== 7 ZAVOLEJTE (zvon převozníka) ========== -->
+<section class="reserve center" data-sekce="Zavolejte / zvon">
+  <div class="bell" aria-hidden="true"><i class="ph-fill ph-bell"></i></div>
+  <h2 class="h2">Dřív se zvonilo.<br>Dnes stačí zavolat.</h2>
+  <a class="bigtel" href="tel:+420724977269">724 977 269</a>
+  <p class="status"><span class="dot" aria-hidden="true"></span><span data-status>Otevřeno duben až září</span></p>
+  <div class="btns"><a class="btn" href="#kontakt">Poptat akci</a></div>
+</section>
+
+<!-- ========== 8 HISTORIE ========== -->
+<section class="hist center" id="historie" data-sekce="Historie">
+  <h2 class="h2">Přes 700 let historie</h2>
+  <p class="sub">Kdysi se sem z Loun chodilo každou neděli s dechovkou. Hospodu teď po letech znovu otevřel vnuk rodiny, která ji koupila v roce 1968.</p>
+  <div class="cards4">
+    <div class="pcard"><div class="foto" style="background-image:url(img/areal-1.jpg)"></div><div class="txt"><p>1314</p><span>První písemná zmínka o Lužeradech.</span></div></div>
+    <div class="pcard"><div class="foto" style="background-image:url(img/veranda.jpg)"></div><div class="txt"><p>1900</p><span>Budova hostince už stojí, patří Schwarzenbergům.</span></div></div>
+    <!-- 30. léta: doplnit ověřený příběh od majitele -->
+    <div class="pcard"><div class="foto" style="background-image:url(img/akce-2.jpg)"></div><div class="txt"><p>30. léta</p><span>Každou neděli vede Lounské k hospodě dechovka.</span></div></div>
+    <div class="pcard"><div class="foto" style="background-image:url(img/areal-3.jpg)"></div><div class="txt"><p>Dnes</p><span>Hospodu vede Zdeněk Bačkora, vnuk Sedlákových.</span></div></div>
+  </div>
+  <div class="btns"><a class="btn" href="#">Celá historie</a></div>
+</section>
+
+<!-- ========== 9 KONTAKT ========== -->
+<section class="contact" id="kontakt" data-sekce="Kontakt">
+  <svg class="wv " viewBox="0 0 1440 70" preserveAspectRatio="none" aria-hidden="true"><path d="M0 26 C240 4 480 6 720 28 S1200 56 1440 22 V70 H0Z" fill="#CDDBB9"/><path d="M0 46 C240 26 480 30 720 46 S1200 64 1440 38 V70 H0Z" fill="#E8EEDC"/></svg>
+  <div class="center">
+    <div class="stars" aria-hidden="true">✦✦✦</div>
+    <h2 class="h2">Kontakt</h2>
+    <p class="sub">Rezervace, poptávka akce nebo dotaz k lodím. Napište nebo zavolejte.</p>
+  </div>
+  <div class="c-grid">
+    <div class="c-info">
+      <dl>
+        <dt><i class="ph-fill ph-map-pin" aria-hidden="true"></i>Adresa</dt><dd>Občerstvení Lužerady<br>Lužerady 428, 440 01 Louny</dd>
+        <dt><i class="ph-fill ph-phone" aria-hidden="true"></i>Telefon</dt><dd><a href="tel:+420724977269">+420 724 977 269</a></dd>
+        <dt><i class="ph-fill ph-envelope-simple" aria-hidden="true"></i>E-mail</dt><dd><a href="mailto:luzerady@gmail.com">luzerady@gmail.com</a></dd>
+        <dt><i class="ph-fill ph-clock" aria-hidden="true"></i>Otevírací doba</dt>
+        <dd><div class="hours">
+          <p class="h-season">Duben až září</p>
+          <p class="h-row"><span>Pondělí až pátek</span><b>16:00 až 20:00</b></p>
+          <p class="h-row"><span>Sobota a neděle</span><b>12:00 až 19:00</b></p>
+          <p class="h-row h-off"><span>Říjen až březen</span><b>zavřeno</b></p>
+        </div>
+        <p class="rez"><i class="ph-fill ph-calendar-check" aria-hidden="true"></i><span><b>Rezervace bereme celý rok.</b> Oslavy, svatby i firemní akce domluvíme i mimo otevírací dobu.</span></p></dd>
+        <dt><i class="ph-fill ph-identification-card" aria-hidden="true"></i>Provozovatel</dt><dd>Zdeněk Bačkora, IČ 06176771</dd>
+      </dl>
+      <div class="btns"><a class="btn" href="https://www.facebook.com/Luzerady/" target="_blank" rel="noopener"><svg class="bi" aria-hidden="true"><use href="#i-fb"/></svg>Facebook</a></div>
+    </div>
+    <!-- DOPLNIT: formulář zatím nikam neodesílá (pro ostrý web Web3Forms nebo Cloudflare funkce) -->
+    <form class="c-form frame" id="formular">
+      <label>Jméno<input name="jmeno" autocomplete="name" required></label>
+      <div class="row">
+        <label>Telefon<input name="telefon" type="tel" autocomplete="tel"></label>
+        <label>E-mail<input name="email" type="email" autocomplete="email" required></label>
+      </div>
+      <div class="row">
+        <label>S čím pomůžeme<select name="typ"><option>Rezervace stolu</option><option>Půjčení lodí</option><option>Svatba</option><option>Oslava nebo firemní akce</option><option>Jiný dotaz</option></select></label>
+        <label>Termín<input name="termin" type="date"></label>
+      </div>
+      <label>Zpráva<textarea name="zprava" rows="5" placeholder="Počet lidí, lodí, co plánujete…"></textarea></label>
+      <button class="btn" type="submit">Odeslat</button>
+      <p class="f-ok" role="status" hidden>Díky, ozveme se co nejdřív.</p>
+    </form>
+  </div>
+  <div class="c-map">
+    <div class="frame"><iframe title="Mapa: Lužerady 428, Louny" src="https://www.google.com/maps?q=50.3700057,13.812897&amp;z=15&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+    <div class="c-way">
+      <h3>Jak k nám</h3>
+      <p><b>Pěšky z Loun:</b> přes železniční most, za zahrádkami pěšinou podél chmelnic po proudu Ohře, asi kilometr. Pak lávka přes potok a kaštanová alej až k nám.</p>
+      <p><b>Na kole:</b> po cyklostezce podél Ohře.</p>
+      <p><b>Autem:</b> Lužerady 428. Poslední úsek příjezdové cesty je horší, jeďte pomalu.</p>
+      <p>Psi jsou u nás vítáni.</p>
+      <div class="btns"><a class="btn" href="https://www.google.com/maps/dir/?api=1&amp;destination=50.3700057,13.812897" target="_blank" rel="noopener"><i class="ph-fill ph-navigation-arrow" aria-hidden="true"></i>Navigovat</a></div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ========== 10 PATIČKA ========== -->
+<footer class="foot" data-sekce="Patička">
+  <svg class="wv " viewBox="0 0 1440 70" preserveAspectRatio="none" aria-hidden="true"><path d="M0 26 C240 4 480 6 720 28 S1200 56 1440 22 V70 H0Z" fill="#3B5A3C"/><path d="M0 46 C240 26 480 30 720 46 S1200 64 1440 38 V70 H0Z" fill="#1F3320"/></svg>
+  <div>
+    <a class="logo" href="#" aria-label="Lužerady, nahoru"><img src="img/logo.png" alt="Lužerady" width="1316" height="585"></a>
+    <p class="credit">© 2026 Zdeněk Bačkora · IČ 06176771</p>
+  </div>
+  <div>
+    <h4>Kontakt</h4>
+    <dl>
+      <dt>Adresa</dt><dd>Lužerady 428<br>440 01 Louny</dd>
+      <dt>Telefon</dt><dd><a href="tel:+420724977269">+420 724 977 269</a></dd>
+    </dl>
+  </div>
+  <div>
+    <h4>Rychlé odkazy</h4>
+    <ul><li><a href="#jidlo">Jídelní lístek</a></li><li><a href="#lode">Půjčovna lodí</a></li><li><a href="#akce">Svatby a akce</a></li><li><a href="#kontakt">Kontakt a mapa</a></li></ul>
+  </div>
+  <div>
+    <h4>Najdete nás</h4>
+    <div class="social">
+      <a href="https://www.facebook.com/Luzerady/" target="_blank" rel="noopener"><svg class="bi" aria-hidden="true"><use href="#i-fb"/></svg>Facebook</a>
+      <a href="https://www.google.com/maps/place/Ob%C4%8Derstven%C3%AD+Lu%C5%BEerady/@50.3699153,13.8127803,17.75z/data=!4m15!1m8!3m7!1s0x470a2fc275e9b161:0x6ac76d05dc76af53!2sLu%C5%BEerady+428,+440+01+Louny+1!3b1!8m2!3d50.3699822!4d13.8128671!16s%2Fg%2F11c4prckvf!3m5!1s0x470a2f91ff40ef37:0x5272280b6b5b7982!8m2!3d50.3700057!4d13.812897!16s%2Fg%2F11g2pzpgz3" target="_blank" rel="noopener"><svg class="bi" aria-hidden="true"><use href="#i-google"/></svg>Google</a>
+      <a href="https://www.firmy.cz/detail/13212941-obcerstveni-luzerady-louny.html" target="_blank" rel="noopener"><svg class="bi" aria-hidden="true"><use href="#i-firmy"/></svg>Firmy.cz</a>
+    </div>
+  </div>
+</footer>
+
+<dialog class="lb" aria-label="Zvětšená fotka">
+  <button class="lb-btn lb-close" aria-label="Zavřít"><i class="ph ph-x"></i></button>
+  <button class="lb-btn lb-prev" aria-label="Předchozí"><i class="ph ph-caret-left"></i></button>
+  <figure><img alt=""><blockquote class="lb-text" hidden></blockquote><figcaption></figcaption></figure>
+  <button class="lb-btn lb-next" aria-label="Další"><i class="ph ph-caret-right"></i></button>
+</dialog>
+
+<script>
+// odpočet
+const cd=document.querySelector('.countdown');
+function tick(){
+  const ms=Math.max(0,new Date(cd.dataset.cil)-new Date());
+  cd.querySelector('[data-d]').textContent=String(Math.floor(ms/864e5)).padStart(2,'0');
+  cd.querySelector('[data-h]').textContent=String(Math.floor(ms/36e5)%24).padStart(2,'0');
+}
+tick(); setInterval(tick,60000);
+// hamburger
+const burger=document.querySelector('.burger');
+const setMenu=open=>{document.body.classList.toggle('menu-open',open);burger.setAttribute('aria-expanded',open);burger.setAttribute('aria-label',open?'Zavřít menu':'Otevřít menu')};
+burger.addEventListener('click',()=>setMenu(!document.body.classList.contains('menu-open')));
+document.querySelectorAll('.mmenu>*').forEach((a,i)=>{a.style.setProperty('--i',i);a.addEventListener('click',()=>setMenu(false))});
+addEventListener('keydown',e=>{if(e.key==='Escape'&&document.body.classList.contains('menu-open')){setMenu(false);burger.focus()}});
+matchMedia('(min-width:1024px)').addEventListener('change',e=>{if(e.matches)setMenu(false)});
+// marquee: zdvojí obsah pro plynulou smyčku, kopii schová čtečkám
+document.querySelectorAll('.band-track,.qtrack').forEach(t=>{
+  const orig=[...t.children], add=()=>orig.forEach(c=>{const k=c.cloneNode(true);k.setAttribute('aria-hidden','true');t.append(k)});
+  while(t.scrollWidth<innerWidth+400) add();
+  [...t.children].forEach(c=>{const k=c.cloneNode(true);k.setAttribute('aria-hidden','true');t.append(k)});
+});
+// recenze: pomalu jedou samy, tažením se dají posunout rychleji
+document.querySelectorAll('.review').forEach(r=>{const p=r.querySelector('p'),b=r.querySelector('.r-more');
+  b.hidden=p.scrollHeight<=p.clientHeight+2;
+  b.onclick=()=>{const lb=document.querySelector('.lb'),q=lb.querySelector('.lb-text');
+    q.textContent=p.textContent; q.hidden=false; lb.querySelector('img').hidden=true;
+    lb.querySelector('figcaption').textContent=r.querySelector('.r-who b').textContent+', Google';
+    lb.querySelectorAll('.lb-prev,.lb-next').forEach(x=>x.hidden=true); lb.showModal()}});
+document.querySelectorAll('.qmarquee').forEach(box=>{
+  const t=box.querySelector('.qtrack');
+  const auto=(matchMedia('(prefers-reduced-motion:reduce)').matches?0:.4)*(box.dataset.dir?-1:1);
+  let x=0, v=0, down=null, lastX=0, moved=0, hover=false;
+  const half=()=>t.scrollWidth/2;
+  const wrap=()=>{const h=half(); x=((x%h)-h)%h;};
+  (function frame(){
+    if(down===null){ x+= -(hover?0:auto)+v; v*=.94; if(Math.abs(v)<.05) v=0; }
+    wrap(); t.style.transform=`translateX(${x}px)`; requestAnimationFrame(frame);
+  })();
+  box.addEventListener('pointerenter',e=>{if(e.pointerType==='mouse')hover=true});
+  box.addEventListener('pointerleave',()=>hover=false);
+  box.addEventListener('pointerdown',e=>{down=e.clientX;lastX=e.clientX;moved=0;v=0});
+  addEventListener('pointermove',e=>{
+    if(down===null) return;
+    const dx=e.clientX-lastX; lastX=e.clientX; moved+=Math.abs(dx); x+=dx; v=dx;
+    if(moved>6){box.classList.add('drag');}
+  });
+  const up=()=>{down=null;box.classList.remove('drag')};
+  addEventListener('pointerup',up); addEventListener('pointercancel',up);
+  box.addEventListener('click',e=>{if(moved>6){e.preventDefault();e.stopPropagation()}},true);
+  box.addEventListener('dragstart',e=>e.preventDefault());
+});
+// lightbox pro galerii a fotky u recenzí
+(()=>{
+  const lb=document.querySelector('.lb'), img=lb.querySelector('img'), cap=lb.querySelector('figcaption');
+  let list=[], i=0;
+  const show=()=>{const a=list[i]; img.src=a.getAttribute('href'); img.alt=a.querySelector('img').alt; cap.textContent=a.dataset.cap||'';
+    img.hidden=false; lb.querySelector('.lb-text').hidden=true;
+    lb.querySelectorAll('.lb-prev,.lb-next').forEach(b=>b.hidden=list.length<2)};
+  document.addEventListener('click',e=>{
+    const a=e.target.closest('[data-lb]'); if(!a||e.defaultPrevented) return;
+    e.preventDefault(); list=[...document.querySelectorAll(`[data-lb="${a.dataset.lb}"]`)].filter(n=>!n.closest('[aria-hidden="true"]'));
+    i=Math.max(0,list.findIndex(n=>n.getAttribute('href')===a.getAttribute('href'))); show(); lb.showModal();
+  });
+  const step=d=>{i=(i+d+list.length)%list.length; show()};
+  lb.querySelector('.lb-prev').onclick=()=>step(-1); lb.querySelector('.lb-next').onclick=()=>step(1);
+  lb.querySelector('.lb-close').onclick=()=>lb.close();
+  lb.addEventListener('click',e=>{if(e.target===lb)lb.close()});
+  lb.addEventListener('keydown',e=>{if(e.key==='ArrowLeft')step(-1);if(e.key==='ArrowRight')step(1)});
+})();
+// stav otevírací doby v pruhu se zvonem (duben až září: po až pá 16 až 20, so a ne 12 až 19)
+function openStatus(d){
+  const m=d.getMonth(), wk=d.getDay()%6!==0, [o,c]=wk?[16,20]:[12,19], h=d.getHours()+d.getMinutes()/60;
+  if(m<3||m>8) return [false,'Teď máme zavřeno, otevíráme v dubnu. Akce domluvíme i mimo sezónu.'];
+  if(h>=o&&h<c) return [true,'Právě máme otevřeno, dnes do '+c+':00'];
+  return [false,h<o?'Dnes otevíráme v '+o+':00':'Dnes už máme zavřeno, zavolat můžete i tak'];
+}
+console.assert(openStatus(new Date(2026,6,15,17))[0]&&!openStatus(new Date(2026,6,18,20))[0]&&!openStatus(new Date(2026,10,14,13))[0],'openStatus');
+const [isOpen,txt]=openStatus(new Date());
+document.querySelector('[data-status]').textContent=txt;
+document.querySelector('.status').classList.toggle('open',isOpen);
+// živé hodnocení Google: funguje jen po nasazení na Cloudflare Pages, jinak zůstanou čísla z HTML
+if(location.protocol!=='file:') fetch('/api/recenze').then(r=>r.ok?r.json():null).then(d=>{
+  if(!d||!d.rating) return;
+  document.querySelector('[data-g-rating]').textContent=d.rating.toFixed(1).replace('.',',');
+  document.querySelector('[data-g-count]').textContent=d.count;
+}).catch(()=>{});
+// formulář: termín jen od dneška (místní čas), zatím nikam neodesílá
+const dnes=new Date(); document.querySelector('[name="termin"]').min=new Date(dnes-dnes.getTimezoneOffset()*6e4).toISOString().slice(0,10);
+document.querySelector('.c-form').addEventListener('submit',e=>{e.preventDefault();e.target.querySelector('.f-ok').hidden=false});
+</script>
+</body>
+</html>
